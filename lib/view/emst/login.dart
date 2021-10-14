@@ -2,8 +2,16 @@ import 'package:approval/view/approval/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key, required String title}) : super(key: key);
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final _valueList = ['범양', '신성', '센추리', '녹색', '냉동', '문화', '복지'];
+  var _selectedValue = '범양';
 
   @override
   Widget build(BuildContext context) {
@@ -70,11 +78,43 @@ class Login extends StatelessWidget {
                       Get.to(DashBoard());
                       print('메인 페이지로 전환');
                     },
-                    child: const Text("로그인"),
+                    child: const Text(
+                      "로그인",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(double.infinity, 60.0),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0))),
+                      minimumSize: const Size(double.infinity, 60.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  DropdownButton(
+                    value: _selectedValue,
+                    items: _valueList.map(
+                      (value) {
+                        return DropdownMenuItem(
+                          value: value,
+                          child: Text(
+                            value,
+                            style: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedValue = value.toString();
+                      });
+                    },
                   ),
                 ],
               ),
