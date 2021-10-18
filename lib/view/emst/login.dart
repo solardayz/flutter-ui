@@ -21,106 +21,126 @@ class _LoginState extends State<Login> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                alignment: Alignment.center,
-                height: 200,
-                child: const Text(
-                  "로그인 페이지",
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.lightBlue,
-                  ),
-                ),
-              ),
+              _ct_header("로그인"),
               Column(
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: "ID를 입력해 주세요.",
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0)),
-                    ),
-                  ),
+                  _tff_id(),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: "PW를 입력해 주세요.",
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0)),
-                    ),
-                  ),
+                  _tff_pw(),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Get.to(DashBoard());
-                      print('메인 페이지로 전환');
-                    },
-                    child: const Text(
-                      "로그인",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 60.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
-                  ),
+                  _eb_login(),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  DropdownButton(
-                    value: _selectedValue,
-                    items: _valueList.map(
-                      (value) {
-                        return DropdownMenuItem(
-                          value: value,
-                          child: Text(
-                            value,
-                            style: TextStyle(
-                              fontSize: 20.0,
-                            ),
-                          ),
-                        );
-                      },
-                    ).toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedValue = value.toString();
-                      });
-                    },
-                  ),
+                  _db_company(),
                 ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _ct_header(String text) {
+    return Container(
+      alignment: Alignment.center,
+      height: 200,
+      child: const Text(
+        "로그인 페이지",
+        style: TextStyle(
+          fontSize: 30.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.lightBlue,
+        ),
+      ),
+    );
+  }
+
+  Widget _db_company() {
+    return DropdownButton(
+      value: _selectedValue,
+      items: _valueList.map(
+        (value) {
+          return DropdownMenuItem(
+            value: value,
+            child: Text(
+              value,
+              style: const TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
+          );
+        },
+      ).toList(),
+      onChanged: (value) {
+        setState(() {
+          _selectedValue = value.toString();
+        });
+      },
+    );
+  }
+
+  Widget _eb_login() {
+    return ElevatedButton(
+      onPressed: () {
+        Get.to(DashBoard());
+        print('메인 페이지로 전환');
+      },
+      child: const Text(
+        "로그인",
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(double.infinity, 60.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+      ),
+    );
+  }
+
+  Widget _tff_pw() {
+    return TextFormField(
+      decoration: InputDecoration(
+        hintText: "PW를 입력해 주세요.",
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        focusedErrorBorder:
+            OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+      ),
+    );
+  }
+
+  Widget _tff_id() {
+    return TextFormField(
+      decoration: InputDecoration(
+        hintText: "ID를 입력해 주세요.",
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        focusedErrorBorder:
+            OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
       ),
     );
   }
