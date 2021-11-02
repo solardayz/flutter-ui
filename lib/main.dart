@@ -1,3 +1,5 @@
+import 'package:approval/view/conponent/storage_details.dart';
+import 'package:approval/view/conponent/storage_info_card.dart';
 import 'package:approval/view/emst/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Login(title: '냉방사 통합 결재 시스템'),
+      // home: const StarageDetails(),
     );
   }
 }

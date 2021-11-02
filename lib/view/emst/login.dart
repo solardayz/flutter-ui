@@ -1,4 +1,4 @@
-import 'package:approval/view/approval/dashboard.dart';
+import 'package:approval/view/approval/dashBoard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -51,7 +51,7 @@ class _LoginState extends State<Login> {
       alignment: Alignment.center,
       height: 200,
       child: const Text(
-        "로그인 페이지",
+        "귀뚜라미 냉방 결재 시스템",
         style: TextStyle(
           fontSize: 30.0,
           fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
         print('메인 페이지로 전환');
       },
       child: const Text(
-        "로그인",
+        "SIGN IN",
         style: TextStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.bold,
