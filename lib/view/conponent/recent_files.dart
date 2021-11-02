@@ -60,7 +60,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
         Row(
           children: [
             SvgPicture.asset(
-              fileInfo.icon!,
+              fileInfo.company!,
               height: 30,
               width: 30,
             ),
@@ -72,7 +72,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
         ),
       ),
       DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
+      DataCell(Text(fileInfo.person!)),
     ],
   );
 }

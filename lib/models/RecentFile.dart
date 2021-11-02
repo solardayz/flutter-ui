@@ -1,50 +1,55 @@
-class RecentFile {
-  final String? icon, title, date, size;
+import 'dart:ui';
 
-  RecentFile({this.icon, this.title, this.date, this.size});
+import 'package:flutter/material.dart';
+
+class RecentFile {
+  final String? company, title, date, person;
+  final Color? color;
+
+  RecentFile({this.company, this.title, this.date, this.person, this.color});
 }
 
 List demoRecentFiles = [
   RecentFile(
-    icon: "assets/icons/xd_file.svg",
-    title: "XD File",
-    date: "01-03-2021",
-    size: "3.5mb",
-  ),
+      company: "신",
+      title: "10월 지방지사 인터넷 비용 건",
+      date: "01-03-2021",
+      person: "홍길동",
+      color: Colors.blue),
   RecentFile(
-    icon: "assets/icons/Figma_file.svg",
-    title: "Figma File",
-    date: "27-02-2021",
-    size: "19.0mb",
-  ),
+      company: "범",
+      title: "업무연락에 의한 소프트웨어 구매의 건",
+      date: "27-02-2021",
+      person: "홍길동",
+      color: Colors.orange),
   RecentFile(
-    icon: "assets/icons/doc_file.svg",
-    title: "Document",
-    date: "23-02-2021",
-    size: "32.5mb",
-  ),
+      company: "센",
+      title: "그룹사 보안관리시스템 계정 변경의 건",
+      date: "23-02-2021",
+      person: "홍길동",
+      color: Colors.blue),
   RecentFile(
-    icon: "assets/icons/sound_file.svg",
-    title: "Sound File",
-    date: "21-02-2021",
-    size: "3.5mb",
-  ),
+      company: "녹",
+      title: "10월 KT전용회선 비용",
+      date: "21-02-2021",
+      person: "홍길동",
+      color: Colors.green),
   RecentFile(
-    icon: "assets/icons/media_file.svg",
-    title: "Media File",
-    date: "23-02-2021",
-    size: "2.5gb",
-  ),
+      company: "범",
+      title: "대체 전표",
+      date: "23-02-2021",
+      person: "홍길동",
+      color: Colors.orange),
   RecentFile(
-    icon: "assets/icons/pdf_file.svg",
-    title: "Sales PDF",
-    date: "25-02-2021",
-    size: "3.5mb",
-  ),
+      company: "신",
+      title: "10월 전산소모품 비용건",
+      date: "25-02-2021",
+      person: "홍길동",
+      color: Colors.blue),
   RecentFile(
-    icon: "assets/icons/excle_file.svg",
-    title: "Excel File",
-    date: "25-02-2021",
-    size: "34.5mb",
-  ),
+      company: "냉",
+      title: "업무연락에 의한 소프트웨어 구입건",
+      date: "25-02-2021",
+      person: "홍길동",
+      color: Colors.blue),
 ];
