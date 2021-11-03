@@ -1,4 +1,4 @@
-import 'package:approval/models/MyFiles.dart';
+import 'package:approval/models/myfiles.dart';
 import 'package:approval/view/conponent/file_info_card.dart';
 import 'package:flutter/material.dart';
 

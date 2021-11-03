@@ -1,4 +1,4 @@
-import 'package:approval/models/MyFiles.dart';
+import 'package:approval/models/myfiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

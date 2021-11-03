@@ -1,5 +1,5 @@
-import 'package:approval/models/MyFiles.dart';
-import 'package:approval/models/RecentFile.dart';
+import 'package:approval/models/myfiles.dart';
+import 'package:approval/models/recent_file.dart';
 import 'package:approval/view/approval/dashBoard/recent_card.dart';
 import 'package:approval/view/conponent/file_info_card.dart';
 import 'package:approval/view/conponent/recent_files.dart';

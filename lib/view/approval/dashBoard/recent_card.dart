@@ -1,4 +1,4 @@
-import 'package:approval/models/RecentFile.dart';
+import 'package:approval/models/recent_file.dart';
 import 'package:flutter/material.dart';
 
 class RecentCard extends StatelessWidget {
