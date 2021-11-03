@@ -1,5 +1,6 @@
 import 'package:approval/models/MyFiles.dart';
 import 'package:approval/models/RecentFile.dart';
+import 'package:approval/view/approval/dashBoard/recent_card.dart';
 import 'package:approval/view/conponent/file_info_card.dart';
 import 'package:approval/view/conponent/recent_files.dart';
 import 'package:data_table_2/data_table_2.dart';
@@ -59,63 +60,6 @@ class _DashBoardBodyState extends State<DashBoardBody> {
           },
         ),
       ],
-    );
-  }
-}
-
-class RecentCard extends StatelessWidget {
-  final RecentFile files;
-  const RecentCard(
-    this.files, {
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.grey),
-      ),
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              // color: Colors.cyanAccent[100],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      '${files.company}',
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: files.color),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '${files.title}',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
-                  ],
-                ),
-                Text('기안자 : ${files.person}'),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
