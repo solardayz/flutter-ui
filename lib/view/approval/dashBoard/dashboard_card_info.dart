@@ -18,7 +18,7 @@ class DashBoardCardInfo extends StatelessWidget {
       onTap: () {
         print(info.title);
         // Get.to(Authorization(title: info.title.toString()));
-        Get.to(ApprovalCard(title: info.title));
+        Get.to(ApprovalCard(title: info.title.toString()));
       },
       child: Container(
         padding: EdgeInsets.all(defaultPadding),

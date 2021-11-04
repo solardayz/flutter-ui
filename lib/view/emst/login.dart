@@ -32,7 +32,25 @@ class _LoginState extends State<Login> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  _eb_login(),
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.to(DashBoard());
+                      print('메인 페이지로 전환');
+                    },
+                    child: const Text(
+                      "SIGN IN",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 60.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
+                  ),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -82,28 +100,6 @@ class _LoginState extends State<Login> {
           _selectedValue = value.toString();
         });
       },
-    );
-  }
-
-  Widget _eb_login() {
-    return ElevatedButton(
-      onPressed: () {
-        Get.to(DashBoard());
-        print('메인 페이지로 전환');
-      },
-      child: const Text(
-        "SIGN IN",
-        style: TextStyle(
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size(double.infinity, 60.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-      ),
     );
   }
 

@@ -1,15 +1,9 @@
-import 'package:approval/models/myfiles.dart';
 import 'package:approval/models/recent_file.dart';
 import 'package:approval/view/approval/dashBoard/recent_card.dart';
-import 'package:approval/view/conponent/file_info_card.dart';
-import 'package:approval/view/conponent/recent_files.dart';
-import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
 import 'dashboard_card.dart';
-import 'dashboard_card_info.dart';
 
 class DashBoardBody extends StatefulWidget {
   const DashBoardBody({Key? key}) : super(key: key);
