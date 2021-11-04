@@ -48,10 +48,9 @@ class ApprovalCard extends StatelessWidget {
                   //     .toList() as ApprovalInfo;
 
                   print(approvalList[index].status);
-                  print(approvalList1);
 
                   return ApprovalCardInfo(
-                    approvalList: approvalList1,
+                    approvalList: approvalList[index],
                   );
                 },
                 separatorBuilder: (context, index) {
