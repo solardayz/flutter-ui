@@ -1,3 +1,4 @@
+import 'package:approval/models/approval_list.dart';
 import 'package:approval/models/myfiles.dart';
 import 'package:flutter/material.dart';
 
@@ -28,8 +29,15 @@ class DashBoardCard extends StatelessWidget {
           mainAxisSpacing: defaultPadding,
           childAspectRatio: childAspectRatio,
         ),
-        itemBuilder: (context, index) =>
-            DashBoardCardInfo(info: demoMyFiles[index]),
+        itemBuilder: (context, index) => DashBoardCardInfo(
+            info: demoMyFiles[index],
+            approvalCount: demoMyFiles[index].title == "결재대기"
+                ? approvalList.where((i) => i.status == 'S').length
+                : demoMyFiles[index].title == "결재예정"
+                    ? approvalList.where((i) => i.status == 'F').length
+                    : demoMyFiles[index].title == "결재중"
+                        ? approvalList.where((i) => i.status == 'T').length
+                        : approvalList.length),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:approval/models/approval_list.dart';
 import 'package:approval/models/myfiles.dart';
 import 'package:approval/view/authorization/authorization.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,11 @@ import 'approval_card.dart';
 class DashBoardCardInfo extends StatelessWidget {
   final CloudStorageInfo info;
 
-  const DashBoardCardInfo({Key? key, required this.info}) : super(key: key);
+  final int approvalCount;
+
+  const DashBoardCardInfo(
+      {Key? key, required this.info, required this.approvalCount})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,7 @@ class DashBoardCardInfo extends StatelessWidget {
               ],
             ),
             Text(
-              '${info.numOfFiles}',
+              '${approvalCount}',
               style: TextStyle(
                 fontSize: 50,
                 color: info.color,

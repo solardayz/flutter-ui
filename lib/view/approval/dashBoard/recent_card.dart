@@ -21,6 +21,7 @@ class RecentCard extends StatelessWidget {
           border: Border.all(color: Colors.grey),
         ),
         child: Row(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -44,8 +45,9 @@ class RecentCard extends StatelessWidget {
                       ),
                       Text(
                         '${files.title}',
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),

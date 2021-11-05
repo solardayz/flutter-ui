@@ -17,9 +17,7 @@ class ApprovalCard extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(
-                height: 30,
-              ),
+              Divider(),
               Text(
                 '${title}',
                 style: Theme.of(context).textTheme.headline4,
@@ -74,7 +72,7 @@ class ApprovalCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 550,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.grey[100]),
       child: Column(
@@ -82,18 +80,34 @@ class ApprovalCardInfo extends StatelessWidget {
         children: [
           Text(
             '${approvalList.title}',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 20),
           ),
-          Text('${approvalList.desc}'),
+          Divider(),
+          Text(
+            '${approvalList.desc}',
+            maxLines: 6,
+            overflow: TextOverflow.fade,
+          ),
+          Divider(),
           Text('${approvalList.person}'),
           Text('${approvalList.amt}'),
           Text('${approvalList.dept}'),
           Text('${approvalList.date}'),
+          Text(
+            '${approvalList.people[0]}',
+          ),
+          Text(
+            '${approvalList.people[1]}',
+          ),
           SizedBox(
             height: 10,
           ),
           Center(
-            child: TextFormField(
+            child: TextField(
+              maxLines: 5,
+              keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                 labelText: '의견',
                 hintText: '의견을 입력해 주세요.',
@@ -109,6 +123,10 @@ class ApprovalCardInfo extends StatelessWidget {
               ),
             ),
           ),
+          // WebView(
+          //   initialUrl: 'http://m.naver.com',
+          //   javascriptMode: JavascriptMode.unrestricted,
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
