@@ -11,7 +11,6 @@ class ApprovalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ApprovalInfo approvalList1;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -29,29 +28,20 @@ class ApprovalCard extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  if (title == "결재대기") {
-                    if (approvalList[index] == 'S') {
-                      approvalList1 = approvalList[index];
-                    }
-                  } else if (title == "결재예정") {
-                    if (approvalList[index] == 'F') {
-                      approvalList1 = approvalList[index];
-                    }
-                  } else if (title == "결재중") {
-                    if (approvalList[index] == 'T') {
-                      approvalList1 = approvalList[index];
-                    }
-                  } else {
-                    approvalList1 = approvalList[index];
-                  }
-                  //     .where((i) => i.status == 'S')
-                  //     .toList() as ApprovalInfo;
-
-                  print(approvalList[index].status);
-                  print(approvalList1);
-
                   return ApprovalCardInfo(
-                    approvalList: approvalList1,
+                    approvalList: (title! == "결재대기"
+                        ? approvalList
+                            .where((e) => e.status == 'S')
+                            .toList()[index]
+                        : title! == "결재예정"
+                            ? approvalList
+                                .where((e) => e.status == 'F')
+                                .toList()[index]
+                            : title! == "결재중"
+                                ? approvalList
+                                    .where((e) => e.status == 'T')
+                                    .toList()[index]
+                                : approvalList[index]),
                   );
                 },
                 separatorBuilder: (context, index) {
@@ -61,7 +51,11 @@ class ApprovalCard extends StatelessWidget {
                 },
                 itemCount: (title! == "결재대기"
                     ? approvalList.where((i) => i.status == 'S').length
-                    : approvalList.length),
+                    : title! == "결재예정"
+                        ? approvalList.where((i) => i.status == 'F').length
+                        : title! == "결재중"
+                            ? approvalList.where((i) => i.status == 'T').length
+                            : approvalList.length),
               ),
             ],
           ),
